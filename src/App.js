@@ -27,8 +27,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1> My React App</h1>
-      <h2>Author: Will Burns-ish</h2>
+      <h1> Will's Workout Tracker V.1 </h1>
+      <h2>Still a work in progress. Here's a photo of me:</h2>
       <img width="500" height="625" src={profileImage} alt="profile-image" />
       <section>
         <SignIn/>
