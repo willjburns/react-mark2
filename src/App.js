@@ -39,7 +39,7 @@ function App() {
 }
 
 function SignIn() {
-  const signInWithGoogle = () => {
+  async const signInWithGoogle = () => {
     {/* const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);*/}
     const { idToken } = await GoogleSignin.SignIn();
