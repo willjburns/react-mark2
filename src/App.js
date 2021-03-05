@@ -1,3 +1,4 @@
+//to commit, use "git add .", then "git commit -m "something"", then "npm run deploy", then "git push -u origin master"
 import logo from './logo.svg';
 import profileImage from './img/profile-image.jpg';
 import './App.css';
@@ -31,7 +32,7 @@ function App() {
       <h2>Still a work in progress. Here's a photo of me:</h2>
       <img width="500" height="625" src={profileImage} alt="profile-image" />
       <section>
-        <SignIn/>
+        {user ? <workoutSubmit/> : <SignIn />}
       </section>
     </div>
   );
@@ -39,12 +40,22 @@ function App() {
 
 function SignIn() {
   const signInWithGoogle = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
+    {/* const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);*/}
+    const { idToken } = await GoogleSignin.SignIn();
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+    return auth().signInWithCredential(googleCredential);
   }
 return(
     <button onClick={signInWithGoogle}>Sign in with Google</button>
   )
+}
+
+function workoutSubmit() {
+  
+  <form>
+
+  </form>
 }
 
 function SignOut() {
