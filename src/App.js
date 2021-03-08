@@ -2,7 +2,7 @@
 import logo from './logo.svg';
 import profileImage from './img/profile-image.jpg';
 import './App.css';
-
+import { GoogleSignin, GoogleSigninbutton } from '@react-native-community/';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
